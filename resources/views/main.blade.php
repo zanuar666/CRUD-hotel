@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('style/assets/css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('style/assets/css/cs-skin-elastic.css') }}">
     <link rel="stylesheet" href="{{ asset('style/assets/scss/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/assets/css/style2.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -30,23 +31,23 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="">MYHOTEL</a>
+                <a class="navbar-brand" href="{{ url('/') }}">MYHOTEL</a>
                 <a class="navbar-brand hidden" href="">M</a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-dashboard"></i>BERANDA </a>
+                        <a href="home"> <i class="menu-icon fa fa-home"></i>BERANDA </a> 
                     </li>
                     <li>
-                        <a href="#"> <i class="menu-icon fa fa-dashboard"></i>CREATE </a>
+                        <a href="create"> <i class="menu-icon fa fa-plus-square"></i>CREATE </a>
                     </li>
                     <li>
-                        <a href="#"> <i class="menu-icon fa fa-dashboard"></i>UPDATE </a>
+                        <a href="#"> <i class="menu-icon fa fa-edit"></i>UPDATE </a>
                     </li>
                     <li>
-                        <a href="#"> <i class="menu-icon fa fa-dashboard"></i>DELETE </a>
+                        <a href="#"> <i class="menu-icon fa fa-trash"></i>DELETE </a>
                     </li>
                 </ul>
             </div>
@@ -62,5 +63,6 @@
         @yield('content')
 
     </div>
+    @yield('js')
 </body>
 </html>

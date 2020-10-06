@@ -13,11 +13,17 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #fff;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
+                background-size: cover;
                 margin: 0;
+                /* background-image: url('{{ asset('style/images/hotel2.jpg') }}'); */
+            }
+            body {
+                background-image: url('{{ asset('style/images/hotel4.jpg') }}');
+                width:100%;
             }
 
             .full-height {
@@ -45,11 +51,11 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 70px;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fff;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -86,8 +92,8 @@
 
                 <div class="links">
                     <a href="#">HOME</a>
+                <a href="{{ url('home') }}">ADMIN</a>
                     <a href="#">BLOG</a>
-                    <a href="#">GOBLOG</a>
                 </div>
             </div>
         </div>

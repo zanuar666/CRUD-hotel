@@ -24,7 +24,7 @@ class Hotel extends Model
 
     public function transaksi(){
         $pdo=DB::getPdo();
-        $stmt=$pdo->prepare("select * from transaksi");
+        $stmt=$pdo->prepare("select a.*, b.nma_resepsionis, c.nma_pengunjung from transaksi a JOIN resepsionis b ON b.id_resepsionis = a.id_resepsionis JOIN pengunjung c ON c.id_pengunjung = a.id_pengunjung");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }

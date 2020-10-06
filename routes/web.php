@@ -15,7 +15,10 @@ use App\Hotel;
 */
 
 Route::get('/', function () {
-    return view('welcome', ['title' => 'PROJECT LARAVEL 7 - ZANUAR']);
+    return view('welcome', ['title' => 'PROJECT LARAVEL 7 - KELOMPOK 3']);
+});
+Route::get('create', function () {
+    return view('create', ['title' => 'PROJECT LARAVEL 7 - ZANUAR']);
 });
 
 Route::get('home', function () {

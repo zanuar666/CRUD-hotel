@@ -78,7 +78,7 @@
             </div>
         </div>  
         
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
                     <strong class="card-title">TRANSAKSI</strong>
@@ -88,8 +88,8 @@
                       <thead>
                         <tr>
                           <th scope="col">ID</th>
-                          <th scope="col">ID Resepsionis</th>
-                          <th scope="col">ID Pengunjung</th>
+                          <th scope="col">Nama Resepsionis</th>
+                          <th scope="col">Nama Pengunjung</th>
                           <th scope="col">Jumlah Kamar</th>
                           <th scope="col">Total Harga</th>
                       </tr>
@@ -98,8 +98,8 @@
                     @foreach($transaksi as $key => $value)
                     <tr>
                         <td>{{ $value->id_transaksi }}</td>
-                        <td>{{ $value->id_resepsionis }}</td>
-                        <td>{{ $value->id_pengunjung }}</td>
+                        <td>{{ $value->nma_resepsionis }}</td>
+                        <td>{{ $value->nma_pengunjung }}</td>
                         <td>{{ $value->jumlah_kamar }}</td>
                         <td>{{ $value->total_harga }}</td>
                     </tr>
@@ -113,4 +113,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('produk')
+
 @endsection
