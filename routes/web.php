@@ -17,9 +17,8 @@ use App\Hotel;
 Route::get('/', function () {
     return view('welcome', ['title' => 'PROJECT LARAVEL 7 - KELOMPOK 3']);
 });
-Route::get('create', function () {
-    return view('create', ['title' => 'PROJECT LARAVEL 7 - ZANUAR']);
-});
+
+Route::get('create','ResepsionisController@index');
 
 Route::get('home', function () {
     $hotel=new Hotel();
@@ -29,3 +28,8 @@ Route::get('home', function () {
     $data['transaksi'] = $hotel->transaksi();
     return view('home',$data);
 });
+
+Route::post('create-resepsionis','ResepsionisController@create_resepsionis')->name('create_resepsionis');
+Route::get('delete','ResepsionisController@delete');
+Route::post('edit', 'ResepsionisController@modal_edit');
+Route::post('edit/process', 'ResepsionisController@process_edit');

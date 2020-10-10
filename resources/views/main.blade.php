@@ -24,6 +24,7 @@
     <script src="{{ asset('style/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('style/assets/js/plugins.js') }}"></script>
     <script src="{{ asset('style/assets/js/main.js') }}"></script>
+    <script src="{{ asset('style/assets/js/jquery.min.js') }}"></script>
 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
@@ -43,12 +44,6 @@
                     <li>
                         <a href="create"> <i class="menu-icon fa fa-plus-square"></i>CREATE </a>
                     </li>
-                    <li>
-                        <a href="#"> <i class="menu-icon fa fa-edit"></i>UPDATE </a>
-                    </li>
-                    <li>
-                        <a href="#"> <i class="menu-icon fa fa-trash"></i>DELETE </a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -63,6 +58,11 @@
         @yield('content')
 
     </div>
+
+    <div id="ModalGlobal" class="modal modal-fade" tabindex="-1" role="dialog">
+
+    </div>
+
     @yield('js')
 </body>
 </html>

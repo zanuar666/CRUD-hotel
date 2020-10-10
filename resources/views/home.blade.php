@@ -92,6 +92,7 @@
                           <th scope="col">Nama Pengunjung</th>
                           <th scope="col">Jumlah Kamar</th>
                           <th scope="col">Total Harga</th>
+                          <th scope="col">ACTION</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -102,6 +103,15 @@
                         <td>{{ $value->nma_pengunjung }}</td>
                         <td>{{ $value->jumlah_kamar }}</td>
                         <td>{{ $value->total_harga }}</td>
+                        <td>
+                            <a href="#" onclick="delete_data({{$value->id_transaksi}})">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                            <a href="#" onclick="edit_data({{ $value->id_transaksi }})" data-toggle="modal" data-target="#ModalGlobal">
+                                <i style="margin-left: 30px;" class="fa fa-edit"></i>
+                            </a>
+                        </td>
+                        {{-- <td><i class="fa fa-edit"></i></td> --}}
                     </tr>
                     @endforeach
               </tbody>
@@ -117,4 +127,44 @@
 
 @section('produk')
 
+@endsection
+@section('js')
+<script>
+    function delete_data(id) {
+        if (confirm("Apakah Anda Yakin Ingin Menghapus Data ini?")) {
+            $.ajax({
+                url:'delete',
+                method:'GET',
+                data:{id:id},
+            }).done(function (data) {
+                if (data == 'success') {
+                    location.reload();
+                } else {
+                    alert("gagal");
+                }
+            })
+        } 
+    }
+
+    function edit_data(id){
+        $.ajax({
+            url: '{{ url("edit") }}',
+            method: 'POST',
+            dataType: 'json',
+            data: {
+                _token: '{{ csrf_token() }}',
+                id: id
+            },
+            success: function(response){
+                if(response.RESULT == 'OK'){
+                    $('#ModalGlobal').html(response.CONTENT);
+                }else{
+                    alert(response.MESSAGE);
+                }
+            }
+        }).fail(function(){
+            alert('Error');
+        });
+    }
+</script>
 @endsection

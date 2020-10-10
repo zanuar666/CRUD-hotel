@@ -14,27 +14,27 @@
 </div>
 
 <div class="tambah">
-    <form action="">
+    <form action="{{route('create_resepsionis')}}" method="POST">
         {{ csrf_field() }}
       <label for="country">Nama Resepsionis</label>
-      <select id="country" name="country">
-        <option value="australia">xxxx</option>
-        <option value="canada">xxxx</option>
-        <option value="usa">xxxx</option>
+      <select id="country" name="id_resepsionis">
+        @foreach ($resepsionis as $rsp)
+          <option value="{{$rsp->id_resepsionis}}">{{$rsp->nma_resepsionis}}</option>  
+        @endforeach
       </select>
     
       <label for="country">Nama Pengunjung</label>
-      <select id="country" name="country">
-        <option value="australia">xxxx</option>
-        <option value="canada">xxxx</option>
-        <option value="usa">xxxx</option>
+      <select id="country" name="id_pengunjung">
+        @foreach ($pengunjung as $peng)
+          <option value="{{$peng->id_pengunjung}}">{{$peng->nma_pengunjung}}</option>  
+        @endforeach
       </select>
 
       <label for="lname">Jumlah Kamar</label>
-      <input type="text" id="lname" name="lastname" placeholder="Jumlah Kamar...">
+      <input type="number" id="lname" name="jumlah_kamar" placeholder="Jumlah Kamar...">
 
       <label for="lname">Total Harga</label>
-      <input type="text" id="lname" name="lastname" placeholder="Total Harga...">
+      <input type="number" id="lname" name="total_harga" placeholder="Total Harga...">
     
       <input type="submit" value="SUBMIT">
     </form>
